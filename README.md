@@ -49,7 +49,7 @@ Based on ROS melodic and QT C++
 
 2. **basler_ros_driver**
 
-     카메라 갯수와 카메라 별 serial number를 입력해준다.
+     카메라수와  serial number를 입력해준다.
 
    - basler_ros_driver/config/default.yaml 설정 (예시: 아래)
 
@@ -100,7 +100,7 @@ Based on ROS melodic and QT C++
 
 ### .launch 실행
 
-**road_recorder** , **bag_recorder** 실행
+**road_recorder**  실행
 
 ```bash
 roslaunch road_rocorder run.launch
@@ -146,15 +146,15 @@ roslaunch road_recorder sensor.launch
 
  - **Fucntion View**
 
-   카메라의 녹화 및 정지 및 파일 저장 위치를 설정할 수 있음. 촬영 방식을 시간 또는 거리로 촬영할 것인가에 대한 조건과 그 값을 선택할 수 있음  
+   카메라의 녹화 및 정지 및 파일 저장 위치를 설정할 수 있음. 촬영조건(거리, 시간)과 그 값을 선택할 수 있음  
 
     - **Record**
 
-      - record 버튼을 누르면 녹화가 시작되고 다시 누르면 중지됨
+      - record 버튼을 누르면 녹화가 시작되고 다시 누르면 중지
 
       - shot버튼을 누르면 누른 시점을 촬영
 
-      - radio 버튼을 통해 시간기준 또는 거리기준으로 촬영 모드 선택 
+      - 선택 버튼 그룹을 통해 시간 또는 거리기준으로 촬영 모드 선택 
 
         |   Mode   |       Discription       |
         | :------: | :---------------------: |
@@ -171,4 +171,4 @@ roslaunch road_recorder sensor.launch
 
  - **GNSS View**
 
-   GNSS PWRPAK7을 통해 받은 위경도 데이터와 status를 표시함 
+   GNSS PWRPAK7을 통해 받은 위경도 데이터와 status를 표시 
