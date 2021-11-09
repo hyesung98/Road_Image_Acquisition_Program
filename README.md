@@ -53,7 +53,7 @@ Based on ROS melodic and QT C++
 
    - basler_ros_driver/config/default.yaml 설정 (예시: 아래)
 
-   ```java
+   ```yaml
    camera_count : 4
    
    camera1:
@@ -73,9 +73,9 @@ Based on ROS melodic and QT C++
        serial_number: 40097973
    ```
 
-   3. **road_recorder**
+2. **road_recorder**
 
-   카메라 갯수와 mode를 입력해준다.
+     카메라 갯수와 mode를 입력해준다.
 
    - road_recorder/config/default.yaml 설정 (예시: 아래)
 
@@ -85,15 +85,15 @@ Based on ROS melodic and QT C++
    viewer_mode: false
    camera_count: 4
    ```
-
+   
       - `viewer_mode` : 모드 설정 
-
+   
    | value |      mode       |
    | :---: | :-------------: |
    | true  |    촬영 모드    |
    | false | 시뮬레이션 모드 |
-
-     - `camera_count` : 연결된 카메라 갯수 설정
+   
+     - `camera_count` : 카메라수 설정
 
 
 --------
