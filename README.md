@@ -9,7 +9,7 @@ Overview
 Based on ROS melodic and QT C++
 
 - Camera : Basler ace acA4112-8gc 
-- GNSS :  novatel PWRPAK7
+- GNSS :  Novatel PWRPAK7
 
 --------
 
@@ -19,9 +19,9 @@ Based on ROS melodic and QT C++
 
    Link : <https://github.com/swri-robotics/novatel_gps_driver>
 
-   원하는 Topic을 받기 위해 내부 launch 파일 수정
+   Setting .launch file
 
-   - novatel_gps_driver/launch/tester_for_eth.launch 설정
+   - road_recorder/launch/sensor.launch 
 
    ```java
    <?xml version="1.0"?>
@@ -49,9 +49,9 @@ Based on ROS melodic and QT C++
 
 2. **basler_ros_driver**
 
-     카메라수와  serial number를 입력해준다.
+     Setting Number of cameras & serial number 
 
-   - basler_ros_driver/config/default.yaml 설정 (예시: 아래)
+   - basler_ros_driver/config/default.yaml 
 
    ```yaml
    camera_count : 4
@@ -75,9 +75,9 @@ Based on ROS melodic and QT C++
 
 2. **road_recorder**
 
-     카메라 갯수와 mode를 입력해준다.
+     Setting Number of cameras & Mode 
 
-   - road_recorder/config/default.yaml 설정 (예시: 아래)
+   - road_recorder/config/default.yaml 
 
    ```yaml
    # camera mode false --> simulation / true --> real world
@@ -86,26 +86,26 @@ Based on ROS melodic and QT C++
    camera_count: 4
    ```
    
-      - `viewer_mode` : 모드 설정    
+      - `viewer_mode` : program mode     
          | value |      mode       |
          | :---: | :-------------: |
-         | true  |    촬영 모드    |
-         | false | 시뮬레이션 모드 |
+         | true  |    record mode   |
+         | false | simulation mode |
    
-     - `camera_count` : 카메라수 설정
+     - `camera_count` : number of connected cameras
 
 
 --------
 
-### .launch 실행
+### .launch execution
 
-- **road_recorder**  실행
+- **road_recorder**  execution
 
 ```bash
 roslaunch road_rocorder run.launch
 ```
 
-- **novaltel_gps_driver**, **basler_ros_driver** 실행
+- **novaltel_gps_driver**, **basler_ros_driver** execution
 
 ```bash
 roslaunch road_recorder sensor.launch
@@ -113,22 +113,22 @@ roslaunch road_recorder sensor.launch
 
 --------
 
-### Topic & Service 구성
+### Topic & Service Configuration
 <p align="center">
    <img src="/README_IMG/topic_diagram.png" alt="topic_diagram" width="80%" height="80%"/>
 </p>
 
 |           Node Name           |      Topic & Service      |                         Description                          |
 | :---------------------------: | :-----------------------: | :----------------------------------------------------------: |
-|       basler-ros-driver       |    Camera info (Topic)    | 받은 Trigger Service 갯수와 저장에 성공한 이미지 갯수를 담고 있는 Topic |
-|       basler-ros-driver       |     Raw Image (Topic)     |       Trigger Service를 받으면 보내는 Image type Topic       |
-| road_image_acquistion_program |    Camera info (Topic)    | basler-ros-driver에 사진촬영을 요청하는 Service Service를 보내면 Raw  Image를 받을 수 있다. |
-| road_image_acquistion_program | Image Directory (Service) |         촬영된 .bmp 의 저장 경로를 지정하는 Service          |
-| road_image_acquistion_program |  Bag Directory (Service)  |         촬영된 .bmp 의 저장 경로를 지정하는 Service          |
-| road_image_acquistion_program |  Start & Stop (Service)   |    bag recorder의 촬영을 시작, 중지 시킬 수 있는 Service     |
-|      novatel-gps-driver       |      bestpos (Topic)      |     Latitude, Longitude, Accuracy 값을  담고 있는 Topic      |
-|      novatel-gps-driver       |      bestutm (Topic)      |           UTM 좌표상의 x, y, z값을 담고 있는 Topic           |
-|      novatel-gps-driver       |      Inspva (Topic)       |            Roll, Pitch, Yaw 값을 담고 있는 Topic             |
+|       basler-ros-driver       |    Camera info (Topic)    |                    Camera monitoring data                    |
+|       basler-ros-driver       |     Raw Image (Topic)     |                         Camera image data                    |
+|       road_recorder           |    Camera info (Topic)    |                         Camera image data                    |
+|       road_recorder           | Image Directory (Service) |                  Specify .bmp file storage path              |
+|       road_recorder           |  Bag Directory (Service)  |                  Specify .bag file storage path              |
+|       road_recorder           |  Start & Stop (Service)   |                     bag recorder start stop                  |
+|      novatel-gps-driver       |      bestpos (Topic)      |                  Latitude, Longitude, Accuracy               |
+|      novatel-gps-driver       |      bestutm (Topic)      |                  UTM Coordinate System x, y, z               |
+|      novatel-gps-driver       |      Inspva (Topic)       |                       Roll, Pitch, Yaw                       |
 
 --------
 
@@ -137,37 +137,37 @@ roslaunch road_recorder sensor.launch
 
  - **Map View**
 
-   KaKao Map API를 사용한 지도 표출 및 interpolation된 좌표와 현재 위치를 지도에 표시함
+   Display map based on KaKao Map API / Display interpolated coordiates and current location on map
 
  - **Camera View**
 
-   Trigger 서비스를 보내고 받은 이미지를 뛰움
+   Display camera image
 
  - **Fucntion View**
 
-   카메라의 녹화 및 정지 및 파일 저장 위치를 설정할 수 있음. 촬영조건(거리, 시간)과 그 값을 선택할 수 있음  
+   Setting Camera's recording and stopping and file storage location / Select the recording condition (distance, time) and its value
 
     - **Record**
 
-      - record 버튼을 누르면 녹화가 시작되고 다시 누르면 중지
+      - Click record button to start recording
 
-      - shot버튼을 누르면 누른 시점을 촬영
+      - Click shot button to record point at which it was pressed is taken
 
-      - 선택 버튼 그룹을 통해 시간 또는 거리기준으로 촬영 모드 선택 
+      - Select button group to choose mode
 
         |   Mode   |       Discription       |
         | :------: | :---------------------: |
-        |   Time   | 설정 시간 기준으로 촬영 |
-        | Distance | 설정 거리 기준으로 촬영 |
+        |   Time   | Record base on time     |
+        | Distance | Record base on distance |
         
          <img src="/README_IMG/record_view.png" alt="record_view" height="70%"/>
 
     - **Directory** 
 
-      - 저장될 폴더(bag, csv, image)의 이름과 경로를 지정
+      - Specify name and path of folder(bag, csv, image) to be saved
 
          <img src="/README_IMG/file_view.png" alt="file_view" height="70%"/>
 
  - **GNSS View**
 
-   GNSS PWRPAK7을 통해 받은 위경도 데이터와 status를 표시 
+   Display coordiate data and status received from GNSS PWRPAK7 
