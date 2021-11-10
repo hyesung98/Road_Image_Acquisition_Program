@@ -75,7 +75,7 @@ Based on ROS melodic and QT C++
 
 2. **road_recorder**
 
-     Setting number of cameras & Mode 
+     Setting number of cameras & mode 
 
    - road_recorder/config/default.yaml 
 
