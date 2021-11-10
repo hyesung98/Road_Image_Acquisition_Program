@@ -19,7 +19,7 @@ Based on ROS melodic and QT C++
 
    Link : <https://github.com/swri-robotics/novatel_gps_driver>
 
-   Setting .launch file
+   setting .launch file
 
    - road_recorder/launch/sensor.launch 
 
