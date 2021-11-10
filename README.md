@@ -114,9 +114,7 @@ roslaunch road_recorder sensor.launch
 --------
 
 ### Topic & Service Configuration
-<p align="center">
-   <img src="/README_IMG/topic_diagram.png" alt="topic_diagram" width="80%" height="80%"/>
-</p>
+   <img src="/README_IMG/topic_diagram.png" alt="topic_diagram" width="60%" height="60%"/>
 
 |           Node Name           |      Topic & Service      |                         Description                          |
 | :---------------------------: | :-----------------------: | :----------------------------------------------------------: |
@@ -160,13 +158,13 @@ roslaunch road_recorder sensor.launch
         |   Time   | Record base on time     |
         | Distance | Record base on distance |
         
-         <img src="/README_IMG/record_view.png" alt="record_view" height="70%"/>
+         <img src="/README_IMG/record_view.png" alt="record_view" width="50%" height="50%"/>
 
     - **Directory** 
 
       - Specify name and path of folder(bag, csv, image) to be saved
 
-         <img src="/README_IMG/file_view.png" alt="file_view" height="70%"/>
+         <img src="/README_IMG/file_view.png" alt="file_view" width="50%" height="50%"/>
 
  - **GNSS View**
 
