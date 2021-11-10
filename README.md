@@ -86,12 +86,11 @@ Based on ROS melodic and QT C++
    camera_count: 4
    ```
    
-      - `viewer_mode` : 모드 설정 
-   
-   | value |      mode       |
-   | :---: | :-------------: |
-   | true  |    촬영 모드    |
-   | false | 시뮬레이션 모드 |
+      - `viewer_mode` : 모드 설정    
+         | value |      mode       |
+         | :---: | :-------------: |
+         | true  |    촬영 모드    |
+         | false | 시뮬레이션 모드 |
    
      - `camera_count` : 카메라수 설정
 
@@ -116,7 +115,7 @@ roslaunch road_recorder sensor.launch
 
 ### Topic & Service 구성
 
-![Alt text](/image/topic_diagram.png)
+![Alt text](/README_IMG/topic_diagram.png)
 
 |           Node Name           |      Topic & Service      |                         Description                          |
 | :---------------------------: | :-----------------------: | :----------------------------------------------------------: |
@@ -134,7 +133,7 @@ roslaunch road_recorder sensor.launch
 
   ### GUI 구성
 
- ![Alt text](/image/UI_configuration.png)
+ ![Alt text](/README_IMG/UI_configuration.png)
 
  - **Map View**
 
@@ -161,13 +160,13 @@ roslaunch road_recorder sensor.launch
         |   Time   | 설정 시간 기준으로 촬영 |
         | Distance | 설정 거리 기준으로 촬영 |
 
-      ![Alt text](/image/record_view.png)
+      ![Alt text](/README_IMG/record_view.png)
 
     - **Directory** 
 
       - 저장될 폴더(bag, csv, image)의 이름과 경로를 지정
 
-      ![Alt text](/image/file_view.png)
+      ![Alt text](/README_IMG/file_view.png)
 
  - **GNSS View**
 
