@@ -155,8 +155,8 @@ roslaunch road_recorder sensor.launch
 
         |   Mode   |       Discription       |
         | :------: | :---------------------: |
-        |   Time   | Record base on time     |
-        | Distance | Record base on distance |
+        |   Time   | Record based on time     |
+        | Distance | Record based on distance |
         
          <img src="/README_IMG/record_view.png" alt="record_view" width="50%" height="50%"/>
 
