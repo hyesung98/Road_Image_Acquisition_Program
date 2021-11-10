@@ -99,13 +99,13 @@ Based on ROS melodic and QT C++
 
 ### .launch 실행
 
-**road_recorder**  실행
+- **road_recorder**  실행
 
 ```bash
 roslaunch road_rocorder run.launch
 ```
 
-**novaltel_gps_driver**, **basler_ros_driver** 실행
+- **novaltel_gps_driver**, **basler_ros_driver** 실행
 
 ```bash
 roslaunch road_recorder sensor.launch
