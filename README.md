@@ -130,7 +130,7 @@ roslaunch road_recorder sensor.launch
 
 --------
 
-  ### GUI 구성
+  ### GUI Configuration
    <img src="/README_IMG/UI_configuration.png" alt="UI_configuration" width="85%" height="85%"/>
 
  - **Map View**
