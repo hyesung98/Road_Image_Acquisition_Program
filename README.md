@@ -49,7 +49,7 @@ Based on ROS melodic and QT C++
 
 2. **basler_ros_driver**
 
-     Setting number of cameras & serial number 
+     setting number of cameras & serial number 
 
    - basler_ros_driver/config/default.yaml 
 
@@ -75,7 +75,7 @@ Based on ROS melodic and QT C++
 
 2. **road_recorder**
 
-     Setting number of cameras & mode 
+     setting number of cameras & mode 
 
    - road_recorder/config/default.yaml 
 
@@ -99,13 +99,13 @@ Based on ROS melodic and QT C++
 
 ### .launch execution
 
-- Run **road_recorder**
+- run **road_recorder**
 
 ```bash
 roslaunch road_rocorder run.launch
 ```
 
-- Run **novaltel_gps_driver** and **basler_ros_driver**
+- run **novaltel_gps_driver** and **basler_ros_driver**
 
 ```bash
 roslaunch road_recorder sensor.launch
@@ -145,7 +145,7 @@ roslaunch road_recorder sensor.launch
 
  - **Fucntion View**
 
-   Setting Camera's recording and stopping and file storage location / Select the recording condition (distance, time) and its value
+   Setting camera's recording and stopping and file storage location / Select the recording condition (distance, time) and its value
 
     - **Record**
 
