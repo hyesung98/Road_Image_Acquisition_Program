@@ -125,7 +125,7 @@ roslaunch road_recorder sensor.launch
 |       road_recorder           |  Bag Directory (Service)  |                  Specify .bag file storage path              |
 |       road_recorder           |  Start & Stop (Service)   |                     bag recorder start & stop                |
 |      novatel-gps-driver       |      bestpos (Topic)      |                  Latitude, Longitude, Accuracy               |
-|      novatel-gps-driver       |      bestutm (Topic)      |                  UTM Coordinate System x, y, z               |
+|      novatel-gps-driver       |      bestutm (Topic)      |                       UTM Coordinate x, y, z                 |
 |      novatel-gps-driver       |      Inspva (Topic)       |                          Roll, Pitch, Yaw                    |
 
 --------
