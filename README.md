@@ -49,7 +49,7 @@ Based on ROS melodic and QT C++
 
 2. **basler_ros_driver**
 
-     Setting Number of cameras & serial number 
+     Setting number of cameras & serial number 
 
    - basler_ros_driver/config/default.yaml 
 
@@ -75,7 +75,7 @@ Based on ROS melodic and QT C++
 
 2. **road_recorder**
 
-     Setting Number of cameras & Mode 
+     Setting number of cameras & Mode 
 
    - road_recorder/config/default.yaml 
 
