@@ -99,13 +99,13 @@ Based on ROS melodic and QT C++
 
 ### .launch execution
 
-- **road_recorder**  execution
+- Run **road_recorder**
 
 ```bash
 roslaunch road_rocorder run.launch
 ```
 
-- **novaltel_gps_driver**, **basler_ros_driver** execution
+- Run **novaltel_gps_driver** and **basler_ros_driver**
 
 ```bash
 roslaunch road_recorder sensor.launch
@@ -120,15 +120,15 @@ roslaunch road_recorder sensor.launch
 
 |           Node Name           |      Topic & Service      |                         Description                          |
 | :---------------------------: | :-----------------------: | :----------------------------------------------------------: |
-|       basler-ros-driver       |    Camera info (Topic)    |                    Camera monitoring data                    |
-|       basler-ros-driver       |     Raw Image (Topic)     |                         Camera image data                    |
-|       road_recorder           |    Camera info (Topic)    |                         Camera image data                    |
+|       basler-ros-driver       |    Camera info (Topic)    |                      camera information data                 |
+|       basler-ros-driver       |     Raw Image (Topic)     |                         camera image data                    |
+|       road_recorder           |    Camera info (Topic)    |                         camera image data                    |
 |       road_recorder           | Image Directory (Service) |                  Specify .bmp file storage path              |
 |       road_recorder           |  Bag Directory (Service)  |                  Specify .bag file storage path              |
-|       road_recorder           |  Start & Stop (Service)   |                     bag recorder start stop                  |
+|       road_recorder           |  Start & Stop (Service)   |                     bag recorder start & stop                |
 |      novatel-gps-driver       |      bestpos (Topic)      |                  Latitude, Longitude, Accuracy               |
 |      novatel-gps-driver       |      bestutm (Topic)      |                  UTM Coordinate System x, y, z               |
-|      novatel-gps-driver       |      Inspva (Topic)       |                       Roll, Pitch, Yaw                       |
+|      novatel-gps-driver       |      Inspva (Topic)       |                          Roll, Pitch, Yaw                    |
 
 --------
 
