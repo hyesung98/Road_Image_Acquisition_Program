@@ -114,8 +114,9 @@ roslaunch road_recorder sensor.launch
 --------
 
 ### Topic & Service 구성
-
-![Alt text](/README_IMG/topic_diagram.png)
+<p align="center">
+   <img src="/README_IMG/topic_diagram.png" alt="topic_diagram" width="80%" height="80%"/>
+</p>
 
 |           Node Name           |      Topic & Service      |                         Description                          |
 | :---------------------------: | :-----------------------: | :----------------------------------------------------------: |
@@ -132,8 +133,7 @@ roslaunch road_recorder sensor.launch
 --------
 
   ### GUI 구성
-
- ![Alt text](/README_IMG/UI_configuration.png)
+   <img src="/README_IMG/UI_configuration.png" alt="UI_configuration" width="85%" height="85%"/>
 
  - **Map View**
 
@@ -159,14 +159,14 @@ roslaunch road_recorder sensor.launch
         | :------: | :---------------------: |
         |   Time   | 설정 시간 기준으로 촬영 |
         | Distance | 설정 거리 기준으로 촬영 |
-
-      ![Alt text](/README_IMG/record_view.png)
+        
+         <img src="/README_IMG/record_view.png" alt="record_view" height="70%"/>
 
     - **Directory** 
 
       - 저장될 폴더(bag, csv, image)의 이름과 경로를 지정
 
-      ![Alt text](/README_IMG/file_view.png)
+         <img src="/README_IMG/file_view.png" alt="file_view" height="70%"/>
 
  - **GNSS View**
 
