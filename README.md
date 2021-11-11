@@ -13,9 +13,9 @@ Based on ROS melodic and QT C++
 
 ### Prerequisites
 
-1. **ROS Installation** 
+1. **Ubuntu and ROS** 
 
-   ROS melodic Link : http://wiki.ros.org/melodic/Installation/Ubuntu
+   Ubuntu 64-bit 18.04 . ROS melodic Link : http://wiki.ros.org/melodic/Installation/Ubuntu
 
    Additional ROS package : 
 
