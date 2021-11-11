@@ -1,6 +1,6 @@
 [submodule "road_recorder"]
 	path = road_recorder
-	url = https://github.com/hyesugn98/road_recorder.git
+	url = https://github.com/hyesugn98/road_recorder
 [submodule "bag_recorder"]
 	path = bag_recorder
 	url = https://github.com/zang09/bag_recorder.git
