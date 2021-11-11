@@ -11,6 +11,32 @@ Based on ROS melodic and QT C++
 
 --------
 
+### Prerequisites
+
+1. **ROS Installation** 
+
+   ROS melodic Link : http://wiki.ros.org/melodic/Installation/Ubuntu
+
+   Additional ROS package : 
+
+   ```
+   sudo apt-get install ros-melodic-image-transport ros-melodic-cv-bridge
+   ```
+
+   
+
+2. **Pylon Package Installation**
+
+   Link : https://www.baslerweb.com/ko/sales-support/downloads/software-downloads/software-pylon-6-3-0-linux-x86-64bit-debian/
+
+   
+
+3. **Qt5 webkit Installation**
+
+   ```
+   sudo apt-get install libqt5webkit5-dev
+   ```
+
 ### Parameter Setting
 
 1. **novatel_gps_driver**
@@ -158,7 +184,7 @@ roslaunch road_recorder sensor.launch
 
 --------
 
-  ### GUI 구성
+  ### GUI Configuration
 
    <img src="./README_IMG/UI_configuration.png" alt="UI_configuration" width="85%" height="85%"/>
 
