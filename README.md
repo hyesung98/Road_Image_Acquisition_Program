@@ -192,6 +192,7 @@ roslaunch road_recorder sensor.launch
     - **Directory** 
 
       - Specify name and path of folder(bag, csv, image) to be saved
+      
          <img src="./README_IMG/file_view.png" alt="file_view" width="50%" height="50%"/>
 
  - **GNSS View**
