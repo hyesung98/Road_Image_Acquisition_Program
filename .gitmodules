@@ -4,3 +4,6 @@
 [submodule "basler-ros-driver"]
 	path = basler-ros-driver
 	url = https://github.com/zang09/basler-ros-driver.git
+[submodule "road_recorder"]
+	path = road_recorder
+	url = https://github.com/hyesugn98/road_recorder
