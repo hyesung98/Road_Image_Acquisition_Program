@@ -1,5 +1,3 @@
-
-
 Road Image Acquistion Program
 ===============
 
@@ -49,7 +47,7 @@ Based on ROS melodic and QT C++
 
 2. **basler_ros_driver**
 
-     setting number of cameras & serial number 
+   setting number of cameras & serial number 
 
    - basler_ros_driver/config/default.yaml 
 
@@ -73,9 +71,9 @@ Based on ROS melodic and QT C++
        serial_number: 40097973
    ```
 
-2. **road_recorder**
+3. **road_recorder**
 
-     setting number of cameras & mode 
+   setting number of cameras & mode 
 
    - road_recorder/config/default.yaml 
 
@@ -85,14 +83,43 @@ Based on ROS melodic and QT C++
    viewer_mode: false
    camera_count: 4
    ```
-   
+
       - `viewer_mode` : program mode     
-         | value |      mode       |
-         | :---: | :-------------: |
-         | true  |    record mode   |
-         | false | simulation mode |
-   
+
+        | value |      mode       |
+        | :---: | :-------------: |
+        | true  |   record mode   |
+        | false | simulation mode |
+
      - `camera_count` : number of connected cameras
+
+4. **Kakao Map API**
+
+   Get JavaScript API key from https://developers.kakao.com/ 
+
+   - road_recorder/resources/map/map.html
+
+     - Delete the comment `<!-- Register JavaScript app key -->` Enter the issued key
+
+     ```javascript
+     <!DOCTYPE html>
+     <html style="height:98%;">
+         <head>
+             <meta charset="utf-8"/>
+             <meta http-equiv="X-UA-Compatible" content="IE=edge">
+             <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+             <title>Qt map</title>
+             <script type="text/javascript" src="http://dapi.kakao.com/v2/maps/sdk.js?appkey=<!-- Register JavaScript app key -->&callback"></script>
+             <script src="http://code.jquery.com/jquery-latest.js"></script>
+         </head>
+         <style>
+             .wrap {left: 18px; bottom: 18px; width: 36px;height: 36px;}
+         </style>
+         <body style="height:100%;">
+             <div id="map" style="width:100%; height:100% ;border:0px solid black;"></div>
+         </body>
+     </html>
+     ```
 
 
 --------
@@ -114,24 +141,26 @@ roslaunch road_recorder sensor.launch
 --------
 
 ### Topic & Service Configuration
-   <img src="/README_IMG/topic_diagram.png" alt="topic_diagram" width="60%" height="60%"/>
 
-|           Node Name           |      Topic & Service      |                         Description                          |
-| :---------------------------: | :-----------------------: | :----------------------------------------------------------: |
-|       basler-ros-driver       |    Camera info (Topic)    |                      camera information data                 |
-|       basler-ros-driver       |     Raw Image (Topic)     |                         camera image data                    |
-|       road_recorder           |    Camera info (Topic)    |                         camera image data                    |
-|       road_recorder           | Image Directory (Service) |                  Specify .bmp file storage path              |
-|       road_recorder           |  Bag Directory (Service)  |                  Specify .bag file storage path              |
-|       road_recorder           |  Start & Stop (Service)   |                     bag recorder start & stop                |
-|      novatel-gps-driver       |      bestpos (Topic)      |                  Latitude, Longitude, Accuracy               |
-|      novatel-gps-driver       |      bestutm (Topic)      |                       UTM Coordinate x, y, z                 |
-|      novatel-gps-driver       |      Inspva (Topic)       |                          Roll, Pitch, Yaw                    |
+   <img src="./README_IMG/topic_diagram.png" alt="topic_diagram" width="60%" height="60%"/>
+
+|     Node Name      |      Topic & Service      |          Description           |
+| :----------------: | :-----------------------: | :----------------------------: |
+| basler-ros-driver  |    Camera info (Topic)    |    camera information data     |
+| basler-ros-driver  |     Raw Image (Topic)     |       camera image data        |
+|   road_recorder    |    Camera info (Topic)    |       camera image data        |
+|   road_recorder    | Image Directory (Service) | Specify .bmp file storage path |
+|   road_recorder    |  Bag Directory (Service)  | Specify .bag file storage path |
+|   road_recorder    |  Start & Stop (Service)   |   bag recorder start & stop    |
+| novatel-gps-driver |      bestpos (Topic)      | Latitude, Longitude, Accuracy  |
+| novatel-gps-driver |      bestutm (Topic)      | UTM Coordinate System x, y, z  |
+| novatel-gps-driver |      Inspva (Topic)       |        Roll, Pitch, Yaw        |
 
 --------
 
-  ### GUI Configuration
-   <img src="/README_IMG/UI_configuration.png" alt="UI_configuration" width="85%" height="85%"/>
+  ### GUI 구성
+
+   <img src="./README_IMG/UI_configuration.png" alt="UI_configuration" width="85%" height="85%"/>
 
  - **Map View**
 
@@ -155,16 +184,15 @@ roslaunch road_recorder sensor.launch
 
         |   Mode   |       Discription       |
         | :------: | :---------------------: |
-        |   Time   | Record based on time     |
-        | Distance | Record based on distance |
-        
-         <img src="/README_IMG/record_view.png" alt="record_view" width="50%" height="50%"/>
+        |   Time   |   Record base on time   |
+        | Distance | Record base on distance |
+
+         <img src="./README_IMG/record_view.png" alt="record_view" width="50%" height="50%"/>
 
     - **Directory** 
 
       - Specify name and path of folder(bag, csv, image) to be saved
-
-         <img src="/README_IMG/file_view.png" alt="file_view" width="50%" height="50%"/>
+         <img src="./README_IMG/file_view.png" alt="file_view" width="50%" height="50%"/>
 
  - **GNSS View**
 
